@@ -1,4 +1,4 @@
-<!--This is data to start the server, is the Model-->
+<!--This is data to start the server, is the Model!-->
 <?php
     require_once "pdo.php";
     
