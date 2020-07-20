@@ -2,12 +2,12 @@
 <?php
     require_once "pdo.php";
     
+    //add new data user.
     if(isset($_POST["name"]) && isset($_POST["lastName"]) 
     && isset($_POST["email"]) && isset($_POST["bornAge"])){
         $sqlInsert = "INSERT INTO users (name, lastName, email, bornAge) 
                         VALUES (:name, :lastName, :email, :bornAge)";
         
-        echo("<pre>\n".$sqlInsert."</pre>\n");
         $stmt = $pdo->prepare($sqlInsert);
         $stmt->execute(array(
             ":name"=>$_POST["name"],
@@ -17,6 +17,23 @@
         ));
     }
     
+    function showData(){ //Why this do not work? I do not know. It is the same.
+        $stmt2 = $pdo->query("SELECT * FROM users");
+        while($row = $stmt2->fetch(PDO::FETCH_ASSOC)){
+            echo("<tr><td>");
+            echo($row["id"]);
+            echo("</td><td>");
+            echo($row["name"]);
+            echo("</td><td>");
+            echo($row["lastName"]);
+            echo("</td><td>");
+            echo($row["email"]);
+            echo("</td><td>");
+            echo($row["bornAge"]);
+            echo("</td></tr>");
+        }
+    }
+
 ?>
 
 <!--This is the View, and how it will be show to the user-->
@@ -34,7 +51,38 @@
         </header>
 
         <main>
-            <div id="data">
+            <div id="showData">
+                <!--This is for show the data-->
+                <p>Stored data in database:</p>
+                <table border="1">
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Last Name</td>
+                        <td>E-mail</td>
+                        <td>Born</td>
+                    </tr>
+                    <?php
+                        //showData();
+                        $stmt2 = $pdo->query("SELECT * FROM users");
+                        while($row = $stmt2->fetch(PDO::FETCH_ASSOC)){
+                            echo("<tr><td>");
+                            echo($row["id"]);
+                            echo("</td><td>");
+                            echo($row["name"]);
+                            echo("</td><td>");
+                            echo($row["lastName"]);
+                            echo("</td><td>");
+                            echo($row["email"]);
+                            echo("</td><td>");
+                            echo($row["bornAge"]);
+                            echo("</td></tr>");
+                        }
+                    ?>
+                </table>
+            </div>
+
+            <div id="dataInput">
                 <form method="post">
                     <p>Name: <br><input type="text" name="name" size="40"></p>   
                     <p>Last Name: <br><input type="text" name="lastName" size="40"></p>
