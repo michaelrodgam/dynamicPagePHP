@@ -5,7 +5,6 @@ require_once "pdo.php";
 //delete data users here
 if(isset($_POST["id"])){
     $sql= "DELETE FROM users WHERE id =:zid";
-    echo("This is:".$sql);
     $stmt= $pdo->prepare($sql);
     $stmt->execute(array(":zid"=>$_POST["id"]));
     echo("<p>Delete completed!</p>");
@@ -29,28 +28,38 @@ if(isset($_POST["id"])){
 
         <main>
             <div>
-                <?php
+                <p>Stored data in database:</p>
+                <table border="1">
+                    <tr>
+                        <td>ID</td>
+                        <td>Name</td>
+                        <td>Last Name</td>
+                        <td>E-mail</td>
+                        <td>Born</td>
+                    </tr>
+                    <?php
                 
-                    $stmt2 = $pdo->query("SELECT * FROM users");
-                    while($row = $stmt2->fetch(PDO::FETCH_ASSOC)){
-                        echo("<tr><td>");
-                        echo($row["id"]);
-                        echo("</td><td>");
-                        echo($row["name"]);
-                        echo("</td><td>");
-                        echo($row["lastName"]);
-                        echo("</td><td>");
-                        echo($row["email"]);
-                        echo("</td><td>");
-                        echo($row["bornAge"]);
-                        echo("</td></tr>");
-                    }
-                ?>
+                        $stmt2 = $pdo->query("SELECT * FROM users");
+                        while($row = $stmt2->fetch(PDO::FETCH_ASSOC)){
+                            echo("<tr><td>");
+                            echo($row["id"]);
+                            echo("</td><td>");
+                            echo($row["name"]);
+                            echo("</td><td>");
+                            echo($row["lastName"]);
+                            echo("</td><td>");
+                            echo($row["email"]);
+                            echo("</td><td>");
+                            echo($row["bornAge"]);
+                            echo("</td></tr>");
+                        }
+                    ?>
+                </table>
             </div>
             <div>
                 <form method="post">
                 <p>Delete by ID:<input type="text" name="id" size="10"></p>
-                <p><input type="submit" value="delete"></p>
+                <p><input type="submit" value="Delete"></p>
                 </form>
             </div>
             <h4><a href="./index.php">Add users?</a><h4>
