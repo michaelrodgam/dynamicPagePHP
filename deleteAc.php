@@ -8,6 +8,9 @@ if(isset($_POST["id"])){
     $stmt= $pdo->prepare($sql);
     $stmt->execute(array(":zid"=>$_POST["id"]));
     echo("<p>Delete completed!</p>");
+    //POST-redirect-GET
+    header("location: deleteAc.php");
+    return;
 }
 
 ?>

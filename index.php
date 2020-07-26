@@ -15,6 +15,9 @@
             ":email"=>$_POST["email"],
             ":bornAge"=>$_POST["bornAge"],
         ));
+        //POST-redirect-GET
+        header("location: index.php");
+        return;
     }
     
     function showData(){ //Why this do not work? I do not know. It is the same.
