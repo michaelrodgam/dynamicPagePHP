@@ -21,7 +21,7 @@ if(isset($_POST["id"])){
         <meta charset="uft-8">
         
         <link href="styles.css" media="screen" rel="stylesheet" type="text/css">
-        <title>Dynamic web page</title>
+        <title>Delete users</title>
     </head>
 
     <body>
@@ -65,7 +65,8 @@ if(isset($_POST["id"])){
                 <p><input type="submit" value="Delete"></p>
                 </form>
             </div>
-            <h4><a href="./index.php">Add users?</a><h4>
+            <h4><a href="./addAc.php">Add users?</a></h4>
+            <h4><a href="./index.php">Home</a></h4>
         </main>
 
         <footer>
