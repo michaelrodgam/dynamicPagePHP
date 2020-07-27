@@ -23,6 +23,8 @@
         <main>
             
             <?php 
+            var_dump($_SESSION);
+
             //log in, with this ugly code mixed.
                 if(! isset($_SESSION["success"])){ ?>
                 <h4><a href="./logIn.php">Log in?</a></h4>
@@ -31,9 +33,10 @@
             //logged and log out.
             ?>
             <div>
-                <p>Welcome <?php $_SESSION["name"]?>! What you want to do?</p>
+                <p>Welcome <?php echo($_SESSION["name"])?>! What you want to do?</p>
                 <h4><a href="./addAc.php">Add users?</a></h4>
                 <h4><a href="./deleteAc.php">Delete Users?</a></h4>
+                <h4><a href="./logOut.php">Log Out</a></h4>
             </div>
             <?php 
             }
