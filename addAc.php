@@ -1,6 +1,7 @@
 <!--This is data to start the server, is the Model!-->
 <?php
     require_once "pdo.php";
+    session_start();
     
     //add new data user.
     if(isset($_POST["name"]) && isset($_POST["lastName"]) 

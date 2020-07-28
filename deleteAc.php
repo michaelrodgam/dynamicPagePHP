@@ -1,6 +1,7 @@
 <!--Controler-->
 <?php
 require_once "pdo.php";
+session_start();
 
 //delete data users here
 if(isset($_POST["id"])){
