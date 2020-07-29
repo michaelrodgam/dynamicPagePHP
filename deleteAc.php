@@ -20,8 +20,8 @@ if(isset($_POST["id"])){
 <html>
     <head>
         <meta charset="uft-8">
-        
-        <link href="styles.css" media="screen" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./styles.css" media="screen" rel="stylesheet" type="text/css">
         <title>Delete users</title>
     </head>
 
@@ -31,9 +31,9 @@ if(isset($_POST["id"])){
         </header>
 
         <main>
-            <div>
+            <div class="tableData">
                 <p>Stored data in database:</p>
-                <table border="1">
+                <table>
                     <tr>
                         <td>ID</td>
                         <td>Name</td>
@@ -60,14 +60,14 @@ if(isset($_POST["id"])){
                     ?>
                 </table>
             </div>
-            <div>
+            <div class="form">
                 <form method="post">
                 <p>Delete by ID:<input type="text" name="id" size="10"></p>
                 <p><input type="submit" value="Delete"></p>
                 </form>
             </div>
-            <h4><a href="./addAc.php">Add users?</a></h4>
-            <h4><a href="./index.php">Home</a></h4>
+            <h4><a class="button" href="./addAc.php">Add users?</a></h4>
+            <h4><a class="button" href="./index.php">Home</a></h4>
         </main>
 
         <footer>

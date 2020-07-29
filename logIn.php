@@ -34,39 +34,44 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
 
 <html>
     <head>
-
+        <meta charset="uft-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./styles.css" media="screen" rel="stylesheet" type="text/css">
     </head>
 
     <body>
         <header>
-        
+            <h1>Please Login</h1>
         </header>
         
         <main>
-            <?php 
-                //just testing
-                var_dump($_SESSION);
-                //flash message
-                if(isset($_SESSION["error"])){
-                    echo("<p style='color: red'>ERROR:: ".$_SESSION["error"]."</p>");
-                    unset($_SESSION["error"]);
-                }
-
-            ?>
-            <form method="post">
-                <p>E-mail: <br><input type="text" name="email" size="40"></p>
-                <p>Password: <br><input type="password" name="password" size="12"></p>
-                <p><input type="submit" value="Log in"></p>
-            </form>
-
             <div>
-                <h4><a href="./index.php">Home</a></h4>
+                <?php 
+                    //flash message
+                    if(isset($_SESSION["error"])){
+                        echo("<p class='flashMessage' style='color: red'>ERROR:: ".$_SESSION["error"]."</p>");
+                        unset($_SESSION["error"]);
+                    }
+                ?>
             </div>
 
+            <div class="form">
+                <form method="post">
+                    <p>E-mail: <br><input type="text" name="email" size="40"></p>
+                    <p>Password: <br><input type="password" name="password" size="12"></p>
+                    <p><input type="submit" value="Log in"></p>
+                </form>
+            </div>
+            <div>
+                <h4><a class="button" href="./index.php">Back</a></h4>
+            </div>
         </main>
         
         <footer>
-        
+            <div>
+                <p>Dynamic web page developed by: Michael Rodriguez Gamboa. <br>
+                All mistakes and rights reserved. Costa Rica. 2020. <p>
+                </div>
         </footer>
 
     </body>

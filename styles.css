@@ -1,0 +1,80 @@
+/*mobile*/
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    color: #e4e3e3;
+    background-color: #204051;
+}
+
+header{
+    text-align: center;
+    padding: 30px 50px;
+}
+
+main{
+    text-align: center;
+    padding: 20px 50px;
+    border-bottom: 1px dotted #ffe78f;
+}
+
+div {
+    margin: 20px;
+    padding: 10px;
+}
+
+p, h4{
+    margin: 10px 0px;
+    padding: 10px 0px;
+}
+
+.tableData{
+    overflow-x: auto;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td{
+    border: 1px solid #ffe78f;
+    padding: 5px;
+}
+
+
+footer{
+    padding: 30px 50px;
+}
+
+input{
+    width: 100%;
+}
+
+.button{
+    color: #ffe78f;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
+}
+
+.button:hover{
+    text-decoration: underline;
+    border: 1px dotted teal;
+    border-radius: 10%;
+}
+
+.form{
+    background-color: #3b6978;
+    border-radius: 10%;
+}
+
+/*desktop*//*
+@media only screen and (min-width: 900px){
+
+    
+
+}*/

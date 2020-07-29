@@ -44,21 +44,21 @@
 <html>
     <head>
         <meta charset="uft-8">
-        
-        <link href="styles.css" media="screen" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./styles.css" media="screen" rel="stylesheet" type="text/css">
         <title>Adding Users</title>
     </head>
 
     <body>
         <header>
-        <h1>Add accounts to the database</h1>
+        <h1>Add new accounts</h1>
         </header>
 
         <main>
-            <div id="showData">
+            <div class="tableData">
                 <!--This is for show the data-->
                 <p>Stored data in database:</p>
-                <table border="1">
+                <table>
                     <tr>
                         <td>ID</td>
                         <td>Name</td>
@@ -86,7 +86,7 @@
                 </table>
             </div>
 
-            <div id="dataInput">
+            <div class="form">
                 <form method="post">
                     <p>Name: <br><input type="text" name="name" size="40"></p>   
                     <p>Last Name: <br><input type="text" name="lastName" size="40"></p>
@@ -97,8 +97,8 @@
             </div>
             
 
-            <h4><a href="./deleteAc.php">Delete users?</a></h4>
-            <h4><a href="./index.php">Home</a></h4>
+            <h4><a class="button" href="./deleteAc.php">Delete users?</a></h4>
+            <h4><a class="button" href="./index.php">Home</a></h4>
         </main>
 
         <footer>

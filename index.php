@@ -8,9 +8,10 @@
 <html>
     <head>
         <meta charset="uft-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="./styles.css" media="screen" rel="stylesheet" type="text/css">
         
-        <link href="styles.css" media="screen" rel="stylesheet" type="text/css">
-        <title>Dynamic web page</title>
+        <title>Dynamic web page XAMP</title>
     </head>
 
     <body>
@@ -21,25 +22,22 @@
         <main>
             
             <?php 
-            var_dump($_SESSION);
-
             //log in, with this ugly code mixed.
                 if(! isset($_SESSION["name"])){ ?>
-                <h4><a href="./logIn.php">Log in?</a></h4>
+                <h4><a class="button" href="./logIn.php">Log in?</a></h4>
             <?php
             } else {
                 //logged and log out.
                 //flash message.
                 if(isset($_SESSION["success"])){
-                    echo("<p style='color:green'>".$_SESSION["success"]."</p>");
+                    echo("<p class='flashMessage' style='color:green'>".$_SESSION["success"]."</p>");
                     unset($_SESSION["success"]);
                 }
             ?>
             <div>
-                <p>User name: <?php echo($_SESSION["name"])?>! What you want to do?</p>
-                <h4><a href="./addAc.php">Add users?</a></h4>
-                <h4><a href="./deleteAc.php">Delete Users?</a></h4>
-                <h4><a href="./logOut.php">Log Out</a></h4>
+                <h4><a class="button" href="./addAc.php">Add users?</a></h4>
+                <h4><a class="button" href="./deleteAc.php">Delete Users?</a></h4>
+                <h4><a class="button" href="./logOut.php">Log Out</a></h4>
             </div>
             <?php 
             }
